@@ -3,11 +3,12 @@
 
 The recommendation engine follows a two-stage “Retrieve and Rank” pipeline designed to balance speed and predictive accuracy.
 
-Phase A: Retrieval Layer (Statistical)
+**Phase A: Retrieval Layer (Statistical)**
 Algorithm: Apriori (Association Rule Mining)
 Function: Identifies globally frequent item pairings using metrics such as Support and Lift
 Storage: Generated rules are cached in Redis as a key-value store to enable constant-time (O(1)) lookup
-Phase B: Ranking Layer (Neural)
+
+**Phase B: Ranking Layer (Neural)**
 Algorithm: Behavioral Sequence Transformer (BST)
 Function: Processes the sequence of items in a user’s cart using self-attention mechanisms to predict the most relevant next add-on
 
